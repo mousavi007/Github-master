@@ -1,0 +1,24 @@
+apply from: 'buildconfig/dependencies.gradle'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath "com.fernandocejas.frodo:frodo-plugin:0.8.2"
+    }
+}
+
+allprojects {
+    ext {
+        androidApplicationId = 'com.lighters.github'
+        androidVersionCode = 1
+        androidVersionName = "1.0"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
